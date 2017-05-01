@@ -110,20 +110,13 @@
 	<script type="text/javascript">
 	$(document).ready(function(){
 		alert("aSome");
-		$("#enviar").click(function () {
-		//saco el valor accediendo a un input de tipo text y name = nombre
 		
-		//saco el valor accediendo al class del input = nombre   
-		// alert($(".val_porcentaje").val());
 			var height;
 			height = $(".val_porcentaje").val()
-			// alert(altura);
 			$(".num_porcentaje").children("p").remove();
 		    document.getElementById("infection").style.height = height+"%";
 		    $(".num_porcentaje").append("<p>"+height+"%"+"</p>");
-		    // document.getElementById("num_porcentaje").value = height+"%";
-
-
+		
 		});
 	});
 	</script>
