@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Zombie</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+	body{
+		background: black;
+	}
+	h2{
+		color:purple;
+		text-align: center;
+	}
+	.cantidad{
+		text-align: center;
+	}
+	.zombie{
+		background-color: #A0061A;
+	}
+	.normal{
+		border:1px solid red;
+	}
+	.zombie .normal img{
+		margin: 0 auto;
+	}
+
+	.infeccion{
+		border-bottom:5px solid #018CFF;	
+		position:absolute;
+		top: 0;
+	    right: 0;
+	    left: 0;
+	    background-color: #335203;
+	    background-image: url(img/Resistente_100.png);
+	    background-position:  center 0 ;
+		background-repeat: no-repeat;
+		z-index:1;
+		height: 0%;
+		margin: 0 10px;
+	} 
+	.zombie .infeccion img{
+		margin: 0 auto;
+	}
+	.porcentaje{
+		background-color: black;
+		background-image: url(img/blood.png);
+		background-size: 500px 300px;
+	    background-position:  center 50% ;
+		background-repeat: no-repeat;
+		height: 200px;
+	}
+	.porcentaje p{
+		vertical-align: middle;
+		text-align: center;
+		color: white;
+		font-size: 40px;
+		padding-top: 60px
+	}
+	@media only screen and (max-width: 679px){
+		.infeccion{
+			background-size:cover;
+		}
+		.porcentaje {
+		    background-size: 300px;
+		    height: 100px;
+		}
+		.porcentaje p{
+			padding-top: 20px;
+		}
+	}
+</style>
+<body>
+
+    <div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 cantidad ">
+					<h2>Porcentaje de zombie</h2>
+					<input type="text" name="val_porcentaje" id="val_porcentaje" class="val_porcentaje">
+					<button class="btn bnt-success" id="enviar"> Enviar</button>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 ">
+				<div class="zombie">
+					<div class="normal">
+						<img src="img/Resistente_0.png" class="img-responsive" alt="">
+					</div>
+					<div class="infeccion" id="infection"> 
+						
+						<!-- <img src="img/Resistente_100.png" class="img-responsive" alt=""> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 porcentaje num_porcentaje">
+				<p>0%</p>
+			</div>
+		</div>
+	</div>	
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		alert("aSome");
+		$("#enviar").click(function () {
+		//saco el valor accediendo a un input de tipo text y name = nombre
+		
+		//saco el valor accediendo al class del input = nombre   
+		// alert($(".val_porcentaje").val());
+			var height;
+			height = $(".val_porcentaje").val()
+			// alert(altura);
+			$(".num_porcentaje").children("p").remove();
+		    document.getElementById("infection").style.height = height+"%";
+		    $(".num_porcentaje").append("<p>"+height+"%"+"</p>");
+		    // document.getElementById("num_porcentaje").value = height+"%";
+
+
+		});
+	});
+	</script>
+</body>
+</html>
