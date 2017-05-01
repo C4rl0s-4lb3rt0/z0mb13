@@ -18,6 +18,7 @@
 	}
 	.cantidad{
 		text-align: center;
+		padding: 20px;
 	}
 	.zombie{
 		background-color: #A0061A;
@@ -81,7 +82,7 @@
 			<div class="col-md-12 cantidad ">
 					<h2>Porcentaje de zombie</h2>
 					<input type="text" name="val_porcentaje" id="val_porcentaje" class="val_porcentaje">
-					<button class="btn bnt-success" id="enviar"> Enviar</button>
+					<button class="btn btn-success" id="enviar"> Enviar</button>
 			</div>
 		</div>
 
@@ -106,17 +107,16 @@
 	</div>	
 	<script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function(){
-		alert("aSome");
-		
+		alert("Porcentaje de Zombie");
+		$("#enviar").click(function () {
 			var height;
 			height = $(".val_porcentaje").val()
 			$(".num_porcentaje").children("p").remove();
 		    document.getElementById("infection").style.height = height+"%";
 		    $(".num_porcentaje").append("<p>"+height+"%"+"</p>");
-		
 		});
 	});
 	</script>
